@@ -100,9 +100,6 @@ header p {
   grid-template-columns: 5.5fr 3fr;
   gap: 30px;
 }
-/* .side {
-  background-color: violet;
-} */
 /* articles */
 .article{
   box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
@@ -275,6 +272,7 @@ footer p{
   }
   .comment{
     justify-content: center !important;
+    float: right;
   }
   .titleFooter{
     gap: 5px;
