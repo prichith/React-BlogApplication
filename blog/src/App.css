@@ -132,6 +132,9 @@ h5 {
   justify-content: space-between;
   margin: 25px 0px;
 }
+.hidden{
+  visibility: hidden;
+}
 .titleFooter button {
   padding: 12px 24px !important;
   cursor: pointer;

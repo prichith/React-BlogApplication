@@ -8,8 +8,8 @@ export default function PopularPosts() {
         <h4>Popular Posts</h4>
       </div>
       <ul>
-        {PopularPostsList.map((post) => (
-          <PopularPostList data={post} />
+        {PopularPostsList.map((post, index) => (
+          <PopularPostList key={index} data={post} />
         ))}
       </ul>
     </div>

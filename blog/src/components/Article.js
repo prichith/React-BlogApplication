@@ -1,4 +1,4 @@
-import TitleDescription from './TitleDescription';
+import TitleDescription from "./TitleDescription";
 
 export default function Article(props) {
   return (
@@ -12,7 +12,7 @@ export default function Article(props) {
             <span className="postedTime">{props.data.date}</span>
           </h5>
         </div>
-        <TitleDescription data={props.data}/>
+        <TitleDescription data={props.data} />
       </div>
     </div>
   );
