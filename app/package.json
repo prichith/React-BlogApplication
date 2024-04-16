@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "axios": "^1.6.8",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.1",
+    "nodemon": "^3.1.0",
+    "path": "^0.12.7"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "name": "app",
+  "version": "1.0.0",
+  "description": "backend for react single page application in react",
+  "main": "server.js",
+  "keywords": [
+    "express",
+    "node",
+    "mongodb"
+  ],
+  "author": "prichith c p",
+  "license": "ISC"
+}
