@@ -1,6 +1,6 @@
 import TitleDescription from "./TitleDescription";
 
-export default function Article(props) {
+export default function Blog(props) {
   return (
     <div className="article">
       <img src={props.data.imageUrl} alt="article cover" />

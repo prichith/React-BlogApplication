@@ -1,4 +1,4 @@
-import { PopularPostsList } from "../Data/Data";
+import { popular_posts_list } from "../datas/data";
 import PopularPostList from "./PopularPostList";
 
 export default function PopularPosts() {
@@ -8,7 +8,7 @@ export default function PopularPosts() {
         <h4>Popular Posts</h4>
       </div>
       <ul>
-        {PopularPostsList.map((post, index) => (
+        {popular_posts_list.map((post, index) => (
           <PopularPostList key={index} data={post} />
         ))}
       </ul>

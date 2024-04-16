@@ -1,4 +1,4 @@
-import { TagsData } from "../Data/Data";
+import { tagsData } from "../datas/data";
 import Tag from "./Tag";
 
 export default function Tags() {
@@ -8,7 +8,7 @@ export default function Tags() {
         <h4>Tags</h4>
       </div>
       <div className="tags title">
-        {TagsData.map((data, index) => (
+        {tagsData.map((data, index) => (
           <Tag index={index} list={data} />
         ))}
       </div>

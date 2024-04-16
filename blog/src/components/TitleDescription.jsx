@@ -38,7 +38,7 @@ export default function TitleDescription(props) {
           {expand ? "READ LESS »" : "READ MORE »"}
         </button>
         <span className="comment">
-          <b>Comments</b> <Comment count={props.data.noOfComments} />
+          <b>Comments</b> <Comment count={props.data.no_of_comments} />
         </span>
       </div>
     </div>
