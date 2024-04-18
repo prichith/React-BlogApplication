@@ -22,60 +22,6 @@
 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>  
-    <div id="dashboard">
-      <header>
-        <div class="container">
-          <h1>Create a New Blog Post</h1>
-        </div>
-      </header>
-
-      <div class="container dashboardMain">
-        <div class="form article">
-          <form action="">
-          <div class="row">
-            <label htmlFor="title">Title</label>
-            <input type="text" placeholder="Enter title" name="title" onChange={} />
-          </div>
-
-          <div class="row">
-            <label htmlFor="description">Description</label>
-            <input type="text" placeholder="Enter description" name="description" onChange={} />                
-          </div>
-
-          <div class="row">
-            <label htmlFor="imageUrl">Image URL</label>
-            <input type="text" placeholder="Enter image url" name="imageUrl" onChange={} />
-          </div>
-
-            <button>Post</button>
-          </form>
-        </div>
-
-        <div class="preview article">
-          <div className="article">
-            <img src={props.data.imageUrl} alt="article cover" />
-            <div className="title">
-              <div className="titleHeader">
-                <h3>{props.data.heading}</h3>
-                <h5>
-                  <span>Title description,</span>
-                  <span className="postedTime">{props.data.date}</span>
-                </h5>
-              </div>
-              <TitleDescription data={props.data} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <footer>
-        <div className="container dashboardFooter">
-          <p>
-            Powered by{" "}
-            <a href="https://www.w3schools.com/w3css/default.asp">w3.css</a>
-          </p>
-        </div>
-      </footer>
-    </div>
+    <div id="dashboard"></div>
   </body>
 </html>
