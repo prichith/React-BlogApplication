@@ -1,24 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Comment from "./Comment";
 
 export default function TitleDescription(props) {
   let originalData = props.data.description;
   let slicedData = originalData.split(" ").slice(0, 100).join(" ");
-  let data;
   let displayButton;
+  let data = originalData;
 
   if (originalData.split(" ").length > 100) {
     data = slicedData;
     displayButton = true;
   } else {
-    data = originalData;
     displayButton = false;
   }
 
   const [description, setDescription] = useState(data);
   const [expand, setExpand] = useState(false);
+  useEffect(() => {
+    setDescription(data);
+  }, [data]);
 
-  const handleReadMore = () => {
+  function handleReadMore() {
     if (expand === false) {
       setDescription(originalData);
       setExpand(true);
@@ -26,7 +28,8 @@ export default function TitleDescription(props) {
       setDescription(slicedData);
       setExpand(false);
     }
-  };
+  }
+
   const buttonClass = displayButton ? "" : "hidden";
   return (
     <div>
@@ -38,7 +41,7 @@ export default function TitleDescription(props) {
           {expand ? "READ LESS »" : "READ MORE »"}
         </button>
         <span className="comment">
-          <b>Comments</b> <Comment count={props.data.no_of_comments} />
+          <b>Comments</b> <Comment count={props.data.comments} />
         </span>
       </div>
     </div>

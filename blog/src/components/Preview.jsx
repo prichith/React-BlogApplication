@@ -1,9 +1,9 @@
 import Blog from "./Blog";
 
-function Preview(){
+function Preview(props){
     return(
         <div className="preview article">
-            <Blog />
+            <Blog data={props.data}/>
         </div>
     )
 }

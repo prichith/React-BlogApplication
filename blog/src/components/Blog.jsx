@@ -2,11 +2,11 @@ import TitleDescription from "./TitleDescription";
 
 export default function Blog(props) {
   return (
-    <div className="article">
+    <div className="">
       <img src={props.data.imageUrl} alt="article cover" />
       <div className="title">
         <div className="titleHeader">
-          <h3>{props.data.heading}</h3>
+          <h3>{props.data.title}</h3>
           <h5>
             <span>Title description,</span>
             <span className="postedTime">{props.data.date}</span>

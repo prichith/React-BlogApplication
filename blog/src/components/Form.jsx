@@ -1,14 +1,27 @@
-function Form() {
+function Form(props) {
+//   const axios = require('axios') //allow you to send a request
+
+// exports.homeRoutes = (req,res)=>{
+//     // make a get request to /api/users
+//     axios.get('http://localhost:3000/api/users')
+//     .then(function(response){
+//         res.render('index',{users : response.data})
+//     })
+//     .catch(err =>{
+//         res.send(err)
+//     })
+// }
   return (
     <div className="form article">
-      <form onSubmit="">
+      <form >
         <div className="row">
           <label htmlFor="title">Title</label>
           <input
             id="title"
             type="text"
             placeholder="Enter title"
-            name="title"
+            name="title" 
+            onChange={props.change}
           />
         </div>
         <div className="row">
@@ -17,7 +30,8 @@ function Form() {
             id="description"
             type="text"
             placeholder="Enter description"
-            name="description"
+            name="description" 
+            onChange={props.change}
           />
         </div>
         <div className="row">
@@ -26,7 +40,8 @@ function Form() {
             id="imageUrl"
             type="text"
             placeholder="Enter image url"
-            name="imageUrl"
+            name="imageUrl" 
+            onChange={props.change}
           />
         </div>
         <button>Post</button>
