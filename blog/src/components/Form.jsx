@@ -1,19 +1,37 @@
-function Form(props) {
-//   const axios = require('axios') //allow you to send a request
+// const axios = require('axios') //allow you to send a request
+import axios from 'axios'; 
 
-// exports.homeRoutes = (req,res)=>{
-//     // make a get request to /api/users
-//     axios.get('http://localhost:3000/api/users')
-//     .then(function(response){
-//         res.render('index',{users : response.data})
-//     })
-//     .catch(err =>{
-//         res.send(err)
-//     })
-// }
+function Form(props) {
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = {
+      title:event.target.title.value,
+      description:event.target.description.value,
+      imageUrl:event.target.imageUrl.value,
+    }
+    console.log(formData);
+
+    try {
+      const response = await axios.post('http://localhost:3001/addpost', formData);
+      console.log(response.blog); // Assuming your server sends back some response data
+      // Optionally, you can reset the form data state after successful submission
+      // setFormData({
+      //   title: "",
+      //   date: "April 18,2024",
+      //   description: "sample",
+      //   imageUrl: "",
+      //   comments: 0,
+      // });
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+
   return (
     <div className="form article">
-      <form >
+      <form onSubmit={handleSubmit}>
         <div className="row">
           <label htmlFor="title">Title</label>
           <input

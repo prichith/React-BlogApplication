@@ -1,10 +1,33 @@
-let services = require('../services/services')
+const Blog = require('../model/posts');
 
 exports.add = async (req,res)=>{
-    let result = await services.add(req.body);
-     result ? res.send("Post added succesfully") : res.send("Post added failed");
+  try {
+      const blog  = new Blog({
+        title:req.body.title,
+        description:req.body.description,
+        imageUrl:req.body.imageUrl,
+        date:dateFormat(Date.now())
+      });
+
+      blog.save();
+      return blog;
+  } catch (error) {
+    console.error(error) || console.log("blog upload failed");
+  }
 }
+
+function dateFormat(today){
+const date = new Date(today);
+const options = { month: 'long', day: 'numeric', year: 'numeric' };
+const formattedDate = date.toLocaleDateString('en-US', options);
+return formattedDate
+}
+
 exports.getAll = async (req,res)=>{
-    let result = await services.getAll(req.body);
-    res.send(result);
+  try {
+      const posts  = await Blog.find();
+      res.send(posts)
+  } catch (error) {
+    console.error(error) || console.log("blog upload failed");
+  }
 }
