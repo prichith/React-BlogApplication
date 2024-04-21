@@ -1,16 +1,15 @@
 import Form from "./Form";
 import Preview from "./Preview";
 import { useState } from "react";
-
-
+import dateFormat from "../dateFormat"
 
 function FormAndPreview() {
   const [formData, setFormData] = useState({
     title: "",
-    // date: "April 18,2024",
-    description: "sample",
+    date: dateFormat(Date.now()),
+    description: "",
     imageUrl: "",
-    // comments: 0
+    comment: 0,
   });
 
   function changeData(event) {
@@ -20,10 +19,6 @@ function FormAndPreview() {
       [name]: value,
     }));
   }
-
-  // 
-
-  // 
 
   return (
     <div className="container dashboardMain">

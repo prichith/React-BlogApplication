@@ -1,33 +1,24 @@
-// const axios = require('axios') //allow you to send a request
-import axios from 'axios'; 
+import axios from "axios";
 
 function Form(props) {
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = {
-      title:event.target.title.value,
-      description:event.target.description.value,
-      imageUrl:event.target.imageUrl.value,
-    }
-    console.log(formData);
+      title: event.target.title.value,
+      description: event.target.description.value,
+      imageUrl: event.target.imageUrl.value,
+    };
 
     try {
-      const response = await axios.post('http://localhost:3001/addpost', formData);
-      console.log(response.blog); // Assuming your server sends back some response data
-      // Optionally, you can reset the form data state after successful submission
-      // setFormData({
-      //   title: "",
-      //   date: "April 18,2024",
-      //   description: "sample",
-      //   imageUrl: "",
-      //   comments: 0,
-      // });
+      const response = await axios.post(
+        "http://localhost:3001/addpost",
+        formData
+      );
+      if(response) alert("Post added successfully")
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
-
 
   return (
     <div className="form article">
@@ -38,7 +29,7 @@ function Form(props) {
             id="title"
             type="text"
             placeholder="Enter title"
-            name="title" 
+            name="title"
             onChange={props.change}
           />
         </div>
@@ -48,7 +39,7 @@ function Form(props) {
             id="description"
             type="text"
             placeholder="Enter description"
-            name="description" 
+            name="description"
             onChange={props.change}
           />
         </div>
@@ -58,7 +49,7 @@ function Form(props) {
             id="imageUrl"
             type="text"
             placeholder="Enter image url"
-            name="imageUrl" 
+            name="imageUrl"
             onChange={props.change}
           />
         </div>

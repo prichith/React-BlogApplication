@@ -2,7 +2,7 @@ import TitleDescription from "./TitleDescription";
 
 export default function Blog(props) {
   return (
-    <div className="">
+    <div className="article">
       <img src={props.data.imageUrl} alt="article cover" />
       <div className="title">
         <div className="titleHeader">
