@@ -9,7 +9,7 @@ export default function Tags() {
       </div>
       <div className="tags title">
         {tagsData.map((data, index) => (
-          <Tag index={index} list={data} />
+          <Tag key={index} index={index} list={data} />
         ))}
       </div>
     </div>

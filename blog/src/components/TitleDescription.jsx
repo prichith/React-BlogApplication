@@ -31,6 +31,7 @@ export default function TitleDescription(props) {
   }
 
   const buttonClass = displayButton ? "" : "hidden";
+  
   return (
     <div>
       <div className="description">

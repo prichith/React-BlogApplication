@@ -8,7 +8,7 @@ function FormAndPreview() {
     title: "",
     date: dateFormat(Date.now()),
     description: "",
-    imageUrl: "",
+    imageUrl: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/blog-header-design-template-24f687b2ff891548109b17b3c5b6ed6d_screen.jpg?ts=1616064569",
     comment: 0,
   });
 
