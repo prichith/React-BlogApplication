@@ -14,9 +14,10 @@ function Form(props) {
         "http://localhost:3001/addpost",
         formData
       );
-      if(response) alert("Post added successfully")
+      if(response.status===200) alert(response.data);
     } catch (error) {
       console.error("Error:", error);
+      alert('Blog posted failed !');
     }
   };
 

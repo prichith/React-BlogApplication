@@ -7,12 +7,13 @@ exports.add = async (req, res) => {
       title: req.body.title,
       description: req.body.description,
       imageUrl: req.body.imageUrl,
-      date: dateFormat(Date.now()),
+      date: dateFormat(Date.now())
     };
     let result = await services.add(query);
-    result ? res.send(result) : null;
+    res.status(200).send('Blog posted successfully')
   } catch (error) {
-    console.error(error) || console.log("blog upload failed");
+    res.status(500).send('blog posted failed !')
+    console.error(error) || console.log("blog posted failed");
   }
 };
 

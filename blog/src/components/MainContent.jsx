@@ -13,7 +13,7 @@ export default function MainContent() {
     const fetchData = async () => {
       try {
         const response = await axios.get("http://localhost:3001/getallposts");
-        setArticles(response.data);
+        setArticles(response.data.reverse());
       } catch (error) {
         console.error("Error:", error);
       }
