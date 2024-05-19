@@ -14,10 +14,14 @@ function Form(props) {
         "http://localhost:3001/addpost",
         formData
       );
-      if(response.status===200) alert(response.data);
+      if (response.status === 200) alert(response.data);
+        event.target.title.value = '';
+        event.target.description.value = '';
+        event.target.imageUrl.value = '';
+        props.reset(props.resetVal);
     } catch (error) {
       console.error("Error:", error);
-      alert('Blog posted failed !');
+      alert("Blog posted failed !");
     }
   };
 
